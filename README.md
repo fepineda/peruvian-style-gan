@@ -75,8 +75,11 @@ Se utilizó un batch_size de 16 y un learning rate de 0.001 y 0.003
 
 
 ## Sample
+#### Peruvian Faces
 
 ![Peruvian Faces](doc/sampler_image.jpeg)
+
+#### Peruvian Mix
 
 ![Peruvian Mix_1](doc/mix_1.jpeg)
 ![Peruvian Mix_2](doc/mix_2.jpeg)
