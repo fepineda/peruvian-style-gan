@@ -53,7 +53,7 @@ Model & Optimizer checkpoints saved at the end of phases of each resolution. (th
 
 ## Sample
 
-![Peruvian Faces](doc/sample_image.jpeg)
+![Peruvian Faces](doc/sampler_image.jpeg)
 
 
 ## Old Checkpoints
