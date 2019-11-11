@@ -16,12 +16,12 @@ from torchvision import datasets, transforms, utils
 from dataset import MultiResolutionDataset
 from model import StyledGenerator, Discriminator
 
-
+# Se definen las funciones a mutilizar en el entrenamiento del modelo
 def requires_grad(model, flag=True):
     for p in model.parameters():
         p.requires_grad = flag
 
-
+# Se acumula los parametros en la ejecucion del entrenamiento
 def accumulate(model1, model2, decay=0.999):
     par1 = dict(model1.named_parameters())
     par2 = dict(model2.named_parameters())
@@ -29,20 +29,21 @@ def accumulate(model1, model2, decay=0.999):
     for k in par1.keys():
         par1[k].data.mul_(decay).add_(1 - decay, par2[k].data)
 
-
+# Se obtiene un batch de la data a procesar
 def sample_data(dataset, batch_size, image_size=4):
     dataset.resolution = image_size
     loader = DataLoader(dataset, shuffle=True, batch_size=batch_size, num_workers=16)
 
     return loader
-
+# Se ajusta la tasa de aprendizaje en el entrenamiento del modelo
 
 def adjust_lr(optimizer, lr):
     for group in optimizer.param_groups:
         mult = group.get('mult', 1)
         group['lr'] = lr * mult
 
-
+# La función principal en la generación de rostros
+# Se define al generador, discriminador y el conjunto de datos
 def train(args, dataset, generator, discriminator):
     step = int(math.log2(args.init_size)) - 2
     resolution = 4 * 2 ** step
@@ -54,6 +55,7 @@ def train(args, dataset, generator, discriminator):
     adjust_lr(g_optimizer, args.lr.get(resolution, 0.001))
     adjust_lr(d_optimizer, args.lr.get(resolution, 0.001))
 
+    # Se van a realizar 3000 000 de iteraccciones al entrenar el modelo
     pbar = tqdm(range(3_000_000))
 
     requires_grad(generator, False)
@@ -91,12 +93,12 @@ def train(args, dataset, generator, discriminator):
                 ckpt_step = step
 
             resolution = 4 * 2 ** step
-
+            # se carga una muestra para el entrenamiento
             loader = sample_data(
                 dataset, args.batch.get(resolution, args.batch_default), resolution
             )
             data_loader = iter(loader)
-
+            # Se almacena el checkpoint del entrenamiento "step"
             torch.save(
                 {
                     'generator': generator.module.state_dict(),
