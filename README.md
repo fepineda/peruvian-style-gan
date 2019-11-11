@@ -1,6 +1,6 @@
 # Peruvian Style GAN
 
-PeruvianStyleGAN se basa en el trabajo dessarrollado por Tero Karras "A Style-Based Generator Architecture for Generative Adversarial Networks"
+PeruvianStyleGAN se basa en el trabajo dessarrollado por Tero Karras "A Style-Based Generator Architecture for Generative Adversarial Networks"(https://arxiv.org/abs/1812.04948)
 
 #### Conjunto de Datos Peruvian_face
 EL conjunto de datos
