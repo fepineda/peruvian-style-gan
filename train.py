@@ -125,6 +125,7 @@ def train(args, dataset, generator, discriminator):
         b_size = real_image.size(0)
         real_image = real_image.cuda()
 
+        # Ajuste de parametros - "loss"
         if args.loss == 'wgan-gp':
             real_predict = discriminator(real_image, step=step, alpha=alpha)
             real_predict = real_predict.mean() - 0.001 * (real_predict ** 2).mean()
@@ -146,6 +147,7 @@ def train(args, dataset, generator, discriminator):
             grad_penalty.backward()
             grad_loss_val = grad_penalty.item()
 
+        # Genera el mixing del modelo
         if args.mixing and random.random() < 0.9:
             gen_in11, gen_in12, gen_in21, gen_in22 = torch.randn(
                 4, b_size, code_size, device='cuda'
@@ -160,7 +162,9 @@ def train(args, dataset, generator, discriminator):
             gen_in1 = gen_in1.squeeze(0)
             gen_in2 = gen_in2.squeeze(0)
 
+        # Envio al generador de parámetros para la generación de imágenes
         fake_image = generator(gen_in1, step=step, alpha=alpha)
+        # Envia al discriminador la imagen generada para su clasificacion
         fake_predict = discriminator(fake_image, step=step, alpha=alpha)
 
         if args.loss == 'wgan-gp':
@@ -189,6 +193,7 @@ def train(args, dataset, generator, discriminator):
 
         d_optimizer.step()
 
+        # Actualización de pesos en el modelo GAN
         if (i + 1) % n_critic == 0:
             generator.zero_grad()
 
@@ -226,7 +231,7 @@ def train(args, dataset, generator, discriminator):
                             torch.randn(gen_j, code_size).cuda(), step=step, alpha=alpha
                         ).data.cpu()
                     )
-
+            # Se guarda la imagen generada cada 100 iteracciones
             utils.save_image(
                 torch.cat(images, 0),
                 f'sample/{str(i + 1).zfill(6)}.png',
@@ -234,7 +239,7 @@ def train(args, dataset, generator, discriminator):
                 normalize=True,
                 range=(-1, 1),
             )
-
+        # Cada 10 000 iteracciones se genera un checkpoint
         if (i + 1) % 10000 == 0:
             torch.save(
                 g_running.state_dict(), f'checkpoint/{str(i + 1).zfill(6)}.model'
@@ -247,7 +252,7 @@ def train(args, dataset, generator, discriminator):
 
         pbar.set_description(state_msg)
 
-
+# Main de entrenamiento que servira para el ingreso de los datos de entrenamiento
 if __name__ == '__main__':
     code_size = 512
     batch_size = 16
@@ -286,14 +291,14 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
-
+    # Carga de modelos y la configuracion de entrenamiento en multiples GPUs
     generator = nn.DataParallel(StyledGenerator(code_size), device_ids=[0]).cuda()
     discriminator = nn.DataParallel(
         Discriminator(from_rgb_activate=not args.no_from_rgb_activate), device_ids=[0]
     ).cuda()
     g_running = StyledGenerator(code_size).cuda()
     g_running.train(False)
-
+    # COnfiguracion de la función de perdida y optimizador del modelo
     class_loss = nn.CrossEntropyLoss()
 
     g_optimizer = optim.Adam(
@@ -309,7 +314,7 @@ if __name__ == '__main__':
     d_optimizer = optim.Adam(discriminator.parameters(), lr=args.lr, betas=(0.0, 0.99))
 
     accumulate(g_running, generator.module, 0)
-
+    # Carga de checkpoint para continuar el entrenamiento
     if args.ckpt is not None:
         ckpt = torch.load(args.ckpt)
 
@@ -328,7 +333,7 @@ if __name__ == '__main__':
     )
 
     dataset = MultiResolutionDataset(args.path, transform)
-
+    # dependiendo de la resolucion de la imagen se varia la tasa de aprendizaje
     if args.sched:
         args.lr = {128: 0.0015, 256: 0.002, 512: 0.003, 1024: 0.003}
         args.batch = {4: 512, 8: 256, 16: 128, 32: 64, 64: 32, 128: 32, 256: 32}
