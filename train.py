@@ -16,6 +16,9 @@ from torchvision import datasets, transforms, utils
 from dataset import MultiResolutionDataset
 from model import StyledGenerator, Discriminator
 
+# Seleccion de GPU para entrenamiento
+torch.cuda.set_device(1)
+
 # Se definen las funciones a mutilizar en el entrenamiento del modelo
 def requires_grad(model, flag=True):
     for p in model.parameters():
