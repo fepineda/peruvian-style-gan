@@ -1,4 +1,4 @@
-# Style-Based GAN in PyTorch
+# Peruvian Style GAN
 
 ##### Update (2019/09/01)
 
