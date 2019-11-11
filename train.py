@@ -285,9 +285,9 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    generator = nn.DataParallel(StyledGenerator(code_size)).cuda()
+    generator = nn.DataParallel(StyledGenerator(code_size), device_ids=[0]).cuda()
     discriminator = nn.DataParallel(
-        Discriminator(from_rgb_activate=not args.no_from_rgb_activate)
+        Discriminator(from_rgb_activate=not args.no_from_rgb_activate), device_ids=[0]
     ).cuda()
     g_running = StyledGenerator(code_size).cuda()
     g_running.train(False)
