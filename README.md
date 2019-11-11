@@ -1,5 +1,21 @@
 # Peruvian Style GAN
 
+PeruvianStyleGAN se basa en el trabajo dessarrollado por Tero Karras "A Style-Based Generator Architecture for Generative Adversarial Networks"
+
+#### Conjunto de Datos Peruvian_face
+EL conjunto de datos
+
+#### Conjunto de datos old_celebA
+
+#### Modelo Pre enternado
+
+#### Entrenamiento
+
+#### Ejemplos
+
+
+
+
 ##### Update (2019/09/01)
 
 I found bugs in the implementation thanks to @adambielski and @TropComplique! (https://github.com/rosinality/style-based-gan-pytorch/issues/33, https://github.com/rosinality/style-based-gan-pytorch/issues/34) I have fixed this and updated checkpoints
