@@ -76,7 +76,7 @@ Se utilizó un *batch_size* de 16 y un *learning rate* de 0.001 y 0.003
 
 ### Ejemplos
 
-#### Peruvian Faces
+#### Peruvian Faces (generados)
 
 ![Peruvian Faces](doc/sampler_image.jpeg)
 
