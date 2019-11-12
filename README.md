@@ -32,7 +32,7 @@ El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 añ
 - 50% Peruvian_Face 
 - 50% Old_CelebA
 
-Al tener un conjunto de datos homogéneo  como peruvian face al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos *peruvian_mix*, en el cual se tienen jóvenes peruanos y ancianos caucasicos.
+Al tener un conjunto de datos homogéneo como *Peruvian_Face* al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos *Peruvian_Mix*, en el cual se tienen jóvenes peruanos y ancianos caucásicos.
 
 El proceso de entrenamiento preliminar se realizó en **Google Colab**, para observar los resultados de acuerdo a los cambios que se realizó en el código replicados.
 
@@ -63,7 +63,7 @@ El modelo utiliza:
 - AdaIN
 
 ### Entrenamiento
-El entrenamiento se realiza en un environment de conda con python 3.6, pytorch 1.3 y CUDA 10.01.
+El entrenamiento se realiza en un environment de conda con **Python 3.6**, **PyTorch 1.3** y **CUDA 10.01**.
 
 El modelo se encuentra adecuado para correr en múltiples GPUs, se modificó para que el entrenamiento se realice en un solo GPU.
 
@@ -76,13 +76,15 @@ Se utilizó un *batch_size* de 16 y un *learning rate* de 0.001 y 0.003
 
 ### Ejemplos
 
-#### Peruvian Faces (generados)
+#### Peruvian_Face
 
 ![Peruvian Faces](doc/sampler_image.jpeg)
 
-#### Peruvian Mix
-
+#### Peruvian_Mix
+Ejemplo 1:
 ![Peruvian Mix_1](doc/mix_1.jpeg)
+
+Ejemplo 2:
 ![Peruvian Mix_2](doc/mix_2.jpeg)
 
 
