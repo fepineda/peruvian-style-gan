@@ -17,18 +17,18 @@ Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A contin
 El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 años) y fondo blanco sin accesorios y es homogéneo, al generar las imágenes (con el modelo entrenado) y comparar las características que aportan es poco notorio los cambios. Para mostrar las diferencias se creo un nuevo dataset con un aporte de 50% de rostros de peruanos y 50% de rostros de personas mayores de edad obtenidas de CelebA.
 
 #### Conjunto de datos Peruvian_Face
-- 5000 imagenes de peruanos jóvenes
+- 5325 imagenes de peruanos jóvenes
 - Fondo blanco
 - Sin accesorios
 
 #### Conjunto de datos Old_CelebA
-- 2500 imagenes de personas mayores
+- 2831 imagenes de personas mayores
 - Rasgos caucasicos
 - Fondo variado
 - Con accesorios
 
 #### Conjunto de datos Peruvian_Mix
-- 5000 imagenes de personas jóvenes y mayores
+- 5662 imagenes de personas jóvenes y mayores
 - 50% Peruvian_Face 
 - 50% Old_CelebA
 
