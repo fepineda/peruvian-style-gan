@@ -1,3 +1,4 @@
+# Modelo basado en A Style-Based Generator Architecture for Generative Adversarial Networks
 import torch
 
 from torch import nn
