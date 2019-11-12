@@ -1,7 +1,7 @@
 # Peruvian Style GAN
 
 #### Dataset
-Cada integrante se encargó de clasificar 10.000 imágenes de celebridades. A continuación, se lista las reglas de anotación de personas mayores de edad en el dataset de CelebA. Es decir, se consideró en el dataset de personas mayores de edad:
+Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A continuación, se detalla reglas de anotación de personas mayores de edad (dataset de CelebA):
 
 - Si se especula que tienen más de 55 años.
 - Si las caras se encuentran mirando hacia la cámara (como la foto de DNI). Se consideró muy pocas fotos de perfil, donde se veía que la personas a pesar de estar en esa posición, miraba a la cámara.
