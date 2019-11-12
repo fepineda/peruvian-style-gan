@@ -51,11 +51,12 @@ Para iniciar el pro procesado de las imágenes se debe ejecutar en la terminal
 
 Las imágenes de los dos conjuntos de datos fueron pre procesados para uniformizar en tamaño, dimensión, obteniéndose un archivo de 2Gb el cual se utilizará al entrenar la red.
 
-En el codigo **prepare_data.py** permite el redimensionamiento utilizando lanzos a diferentes escalas, se optimiza para que redimensione a imágenes de 64px y guardarlas temporalmente en formato *jpeg*.
+En el codigo **prepare_data.py** permite el redimensionamiento utilizando *Lanczos* a diferentes escalas, se optimiza para que redimensione a imágenes de 64px y guardarlas temporalmente en formato *jpeg*.
 
 
 #### Modelo 
-- El modelo utiliza como inicializador de pesos xavier inicialization
+El modelo utiliza:
+- Inicializador de pesos xavier inicialization
 - Bloques convolucionales
 - Progressive GAN
 - AdaIN
