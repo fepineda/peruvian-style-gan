@@ -1,7 +1,7 @@
 # Peruvian Style GAN
 
-#### Dataset
-##### CelebA
+### Dataset
+#### Anotación de old_CelebA
 Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A continuación, se detalla reglas de anotación de personas mayores de edad (dataset de CelebA):
 
 - Si se especula que tienen más de 55 años.
@@ -13,22 +13,21 @@ Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A contin
 - A pesar de que haya 2 rostros en la foto.
 - Todas las caras que cumplan con las reglas antes descritas, sin filtrar algún rasgo o accesorio en particular.
 
-##### Peruvian_Faces
+#### Peruvian_Face
 El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 años) y fondo blanco sin accesorios y es homogéneo, al generar las imágenes (con el modelo entrenado) y comparar las características que aportan es poco notorio los cambios. Para mostrar las diferencias se creo un nuevo dataset con un aporte de 50% de rostros de peruanos y 50% de rostros de personas mayores de edad obtenidas de CelebA.
 
-
-#### Conjunto de Datos Peruvian_face
+#### Conjunto de Datos Peruvian_Face
 - 5000 imagenes de peruanos jóvenes
 - Fondo blanco
 - Sin accesorios
 
-#### Conjunto de datos old_celebA
+#### Conjunto de datos old_CelebA
 - 2500 imagenes de personas mayores
 - Rasgos caucasicos
 - Fondo variado
 - Con accesorios
 
-#### Conjunto de datos peruvian_mix
+#### Conjunto de datos Peruvian_Mix
 - 5000 imagenes de personas jóvenes y mayores
 - 50% peruvian face 
 - 50% old_celeba
