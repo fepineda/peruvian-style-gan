@@ -3,8 +3,8 @@
 #### Dataset
 Cada integrante se encargó de clasificar 10.000 imágenes de celebridades. A continuación, se lista las reglas de anotación de personas mayores de edad en el dataset de CelebA. Es decir, se consideró en el dataset de personas mayores de edad:
 
-Si se especula que tienen más de 55 años.
-Si las caras se encuentran mirando hacia la cámara (como la foto de DNI). Se consideró muy pocas fotos de perfil, donde se veía que la personas a pesar de estar en esa posición, miraba a la cámara.
+- Si se especula que tienen más de 55 años.
+- Si las caras se encuentran mirando hacia la cámara (como la foto de DNI). Se consideró muy pocas fotos de perfil, donde se veía que la personas a pesar de estar en esa posición, miraba a la cámara.
 Si tienen rasgos de ancianos a pesar de su verdadera edad. Por ejemplo, existen celebridades (en su gran mayoría mujeres) que usan mucho maquillaje o cirugías para verse joven, estos casos no se tomaron en cuenta a pesar de que se sabía que eran personas mayores.
 A pesar de que exista deformidades en la foto. Por ejemplo, había casos donde la cabeza se estiraba hasta el extremo superior de la imagen.
 A pesar de que haya letras (pequeñas) sobre el rostro de la cara de la persona.
