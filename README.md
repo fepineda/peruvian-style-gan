@@ -1,7 +1,7 @@
 # Peruvian Style GAN
 
 ### Dataset
-#### Anotación de old_CelebA
+#### Anotación de Old_CelebA
 Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A continuación, se detalla reglas de anotación de personas mayores de edad (dataset de CelebA):
 
 - Si se especula que tienen más de 55 años.
@@ -16,12 +16,12 @@ Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A contin
 #### Peruvian_Face
 El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 años) y fondo blanco sin accesorios y es homogéneo, al generar las imágenes (con el modelo entrenado) y comparar las características que aportan es poco notorio los cambios. Para mostrar las diferencias se creo un nuevo dataset con un aporte de 50% de rostros de peruanos y 50% de rostros de personas mayores de edad obtenidas de CelebA.
 
-#### Conjunto de Datos Peruvian_Face
+#### Conjunto de datos Peruvian_Face
 - 5000 imagenes de peruanos jóvenes
 - Fondo blanco
 - Sin accesorios
 
-#### Conjunto de datos old_CelebA
+#### Conjunto de datos Old_CelebA
 - 2500 imagenes de personas mayores
 - Rasgos caucasicos
 - Fondo variado
@@ -29,18 +29,18 @@ El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 añ
 
 #### Conjunto de datos Peruvian_Mix
 - 5000 imagenes de personas jóvenes y mayores
-- 50% peruvian face 
-- 50% old_celeba
+- 50% Peruvian_Face 
+- 50% Old_CelebA
 
-Al tener un conjunto de datos homogéneo  como peruvian face al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos peruvian_mix , en el cual se tienen jóvenes peruanos y ancianos caucasicos.
+Al tener un conjunto de datos homogéneo  como peruvian face al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos *peruvian_mix*, en el cual se tienen jóvenes peruanos y ancianos caucasicos.
 
-El proceso de entrenamiento preliminar se realizó en Google Colab, para observar los resultados de acuerdo a los cambios que se realizó en el código replicados.
+El proceso de entrenamiento preliminar se realizó en **Google Colab**, para observar los resultados de acuerdo a los cambios que se realizó en el código replicados.
 
 - Se redujo el número de iteraciones de 3.000.000 a 100.000, al trabajar con imágenes de 64x64 no se busca detalles muy exactos en las imágenes resultantes.
 - Se modificó el *batch_size* para acelerar tiempos de entrenamiento.
 - Se probó con diversos hiperparametros.
 
-El entrenamiento final se realizó en Nvidia RTX 2080, el tiempo de entrenamiento fue de 20 horas.
+El entrenamiento final se realizó en **Nvidia RTX 2080**, el tiempo de entrenamiento fue de 20 horas.
 
 Para tener una referencia en el proceso de entrenamiento se obtiene checkpoints con el modelo entrenado cada 10.000 iteraciones e imágenes de referencia cada 100 iteraciones.
 
