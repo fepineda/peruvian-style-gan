@@ -44,7 +44,7 @@ El entrenamiento final se realizó en Nvidia RTX 2080, el tiempo de entrenamient
 
 Para tener una referencia en el proceso de entrenamiento se obtiene checkpoints con el modelo entrenado cada 10.000 iteraciones e imágenes de referencia cada 100 iteraciones.
 
-#### Preprocesamiento de imágenes
+### Preprocesamiento de imágenes
 
 Para iniciar el pro procesado de las imágenes se debe ejecutar en la terminal
 
@@ -55,14 +55,14 @@ Las imágenes de los dos conjuntos de datos fueron pre procesados para uniformiz
 En el codigo **prepare_data.py** permite el redimensionamiento utilizando *Lanczos* a diferentes escalas, se optimiza para que redimensione a imágenes de 64px y guardarlas temporalmente en formato *jpeg*.
 
 
-#### Modelo 
+### Modelo 
 El modelo utiliza:
 - Inicializador de pesos xavier inicialization
 - Bloques convolucionales
 - Progressive GAN
 - AdaIN
 
-#### Entrenamiento
+### Entrenamiento
 El entrenamiento se realiza en un environment de conda con python 3.6, pytorch 1.3 y CUDA 10.01.
 
 El modelo se encuentra adecuado para correr en múltiples GPUs, se modificó para que el entrenamiento se realice en un solo GPU.
@@ -74,10 +74,8 @@ Para inicar el entrenamiento en la terminal se ejecuta **train.py**, como se red
 Se utilizó un *batch_size* de 16 y un *learning rate* de 0.001 y 0.003
 
 
-#### Ejemplos
+### Ejemplos
 
-
-## Sample
 #### Peruvian Faces
 
 ![Peruvian Faces](doc/sampler_image.jpeg)
