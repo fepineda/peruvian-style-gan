@@ -17,18 +17,18 @@ Cada integrante del equipo clasificó 10.000 imágenes de celebridades. A contin
 El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 años) y fondo blanco sin accesorios y es homogéneo, al generar las imágenes (con el modelo entrenado) y comparar las características que aportan es poco notorio los cambios. Para mostrar las diferencias se creo un nuevo dataset con un aporte de 50% de rostros de peruanos y 50% de rostros de personas mayores de edad obtenidas de CelebA.
 
 #### Conjunto de datos Peruvian_Face
-- 5325 imagenes de peruanos jóvenes
+- 5000 imagenes de peruanos jóvenes
 - Fondo blanco
 - Sin accesorios
 
 #### Conjunto de datos Old_CelebA
-- 2831 imagenes de personas mayores
+- 2500 imagenes de personas mayores
 - Rasgos caucasicos
 - Fondo variado
-- Con accesorios (lentes, sombreros, gorros)
+- Con accesorios
 
 #### Conjunto de datos Peruvian_Mix
-- 5662 imagenes de personas jóvenes y mayores
+- 5000 imagenes de personas jóvenes y mayores
 - 50% Peruvian_Face 
 - 50% Old_CelebA
 
@@ -69,7 +69,7 @@ El entrenamiento se realiza en un environment de conda con **Python 3.6**, **PyT
 
 El modelo se encuentra adecuado para correr en múltiples GPUs, se modificó para que el entrenamiento se realice en un solo GPU.
 
-Para inicar el entrenamiento en la terminal se ejecuta **train.py**, como se reduce el alcance a imágenes de 64px se debe ejecutar con los parámetros:
+Para iniciar el entrenamiento en la terminal se ejecuta **train.py**, como se reduce el alcance a imágenes de 64px se debe ejecutar con los parámetros:
 
 ```
 $python train.py “Ruta archivo pre procesado” --init_size 64 --max_size 64
@@ -77,6 +77,13 @@ $python train.py “Ruta archivo pre procesado” --init_size 64 --max_size 64
 
 Se utilizó un *batch_size* de 16 y un *learning rate* de 0.001 y 0.003
 
+### Generación de imágenes
+
+Para generar imágenes usando el modelo previamente entrenado, en la terminal se ejecuta **generate.py**, tal como se muestra a continuación:
+
+```
+$python generate.py “Ruta del modelo entrenado” --size 64
+```
 
 ### Ejemplos
 
