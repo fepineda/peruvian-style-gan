@@ -1,3 +1,10 @@
+
+'''
+Programa encargado de la generación de las imagenes usando el modelo previamente entrenado
+       - El modelo carga el archivo generado en el entrenamiento
+       - Permite la generación de imagenes en forma de matriz, mostrando los aportes de dos imagenes para generar una
+       tercera imagen
+'''
 import argparse
 import math
 
