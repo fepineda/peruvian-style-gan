@@ -48,7 +48,9 @@ Para tener una referencia en el proceso de entrenamiento se obtiene checkpoints 
 
 Para iniciar el pro procesado de las imágenes se debe ejecutar en la terminal
 
-*$python prepare.py “ruta de la carpeta con las imágenes” “Ruta destino”*
+```
+$python prepare.py “ruta de la carpeta con las imágenes” “Ruta destino”
+```
 
 Las imágenes de los dos conjuntos de datos fueron pre procesados para uniformizar en tamaño, dimensión, obteniéndose un archivo de 2Gb el cual se utilizará al entrenar la red.
 
@@ -69,7 +71,9 @@ El modelo se encuentra adecuado para correr en múltiples GPUs, se modificó par
 
 Para inicar el entrenamiento en la terminal se ejecuta **train.py**, como se reduce el alcance a imágenes de 64px se debe ejecutar con los parámetros:
 
-*$python train.py “Ruta archivo pre procesado” --init_size 64 --max_size 64*
+```
+$python train.py “Ruta archivo pre procesado” --init_size 64 --max_size 64
+```
 
 Se utilizó un *batch_size* de 16 y un *learning rate* de 0.001 y 0.003
 
