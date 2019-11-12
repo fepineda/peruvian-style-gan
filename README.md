@@ -33,11 +33,12 @@ El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 añ
 
 Al tener un conjunto de datos homogéneo  como peruvian face al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos peruvian_mix , en el cual se tienen jóvenes peruanos y ancianos caucasicos.
 
-El proceso de entrenamiento preliminar se realizó en colab, para observar los resultados de acuerdo a los cambios que se realizó en el código replicados. 
+El proceso de entrenamiento preliminar se realizó en Google Colab, para observar los resultados de acuerdo a los cambios que se realizó en el código replicados. 
 
-Se redujo el número de iteraciones de 3 000 000 a 100 000, al trabajar con imágenes de 64x64 no se busca detalles muy exactos en las imágenes resultantes
-Se modificó el batch_size para acelerar tiempos de entrenamiento
-Se probó con diversos hiperparametros 
+- Se redujo el número de iteraciones de 3.000.000 a 100.000, al trabajar con imágenes de 64x64 no se busca detalles muy exactos en las imágenes resultantes.
+- Se modificó el batch_size para acelerar tiempos de entrenamiento.
+- Se probó con diversos hiperparametros.
+
 El entrenamiento final se realizó en Nvidia RTX 2080, el tiempo de entrenamiento fue de 20 horas.
 
 Para tener una referencia en el proceso de entrenamiento se obtiene checkpoints con el modelo entrenado cada 10000 iteraciones e imágenes de referencia cada 100 iteraciones.
