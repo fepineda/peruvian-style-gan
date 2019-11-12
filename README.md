@@ -50,7 +50,7 @@ $python prepare.py “ruta de la carpeta con las imágenes” “Ruta destino”
 
 Las imágenes de los dos conjuntos de datos fueron pre procesados para uniformizar en tamaño, dimensión, obteniéndose un archivo de 2Gb el cual se utilizará al entrenar la red.
 
-En el codigo prepare_data.py permite el redimensionamiento utilizando lanczos a diferentes escalas, se optimiza para que redimensione a imágenes de 64px y guardarlas temporalmente en formato jpeg.
+En el codigo prepare_data.py permite el redimensionamiento utilizando lanzos a diferentes escalas, se optimiza para que redimensione a imágenes de 64px y guardarlas temporalmente en formato jpeg.
 
 
 #### Modelo 
