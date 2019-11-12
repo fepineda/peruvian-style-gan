@@ -9,7 +9,7 @@ from tqdm import tqdm
 from torchvision import datasets
 from torchvision.transforms import functional as trans_fn
 
-
+# Funciones para el cambio de resoluciones y formato
 def resize_and_convert(img, size, quality=100):
     img = trans_fn.resize(img, size, Image.LANCZOS)
     img = trans_fn.center_crop(img, size)
@@ -19,7 +19,7 @@ def resize_and_convert(img, size, quality=100):
 
     return val
 
-
+# Resoluciones utilizadas
 def resize_multiple(img, sizes=(8, 16, 32, 64, 128, 256, 512, 1024), quality=100):
     imgs = []
 
@@ -28,7 +28,7 @@ def resize_multiple(img, sizes=(8, 16, 32, 64, 128, 256, 512, 1024), quality=100
 
     return imgs
 
-
+# Se utilizan imagenes con 3 canales RGB
 def resize_worker(img_file, sizes):
     i, file = img_file
     img = Image.open(file)
