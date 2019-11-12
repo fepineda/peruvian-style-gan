@@ -36,8 +36,7 @@ def resize_worker(img_file, sizes):
     out = resize_multiple(img, sizes=sizes)
 
     return i, out
-
-
+# Se implementa tqdm para mostrar el progreso del preprocesado
 def prepare(transaction, dataset, n_worker, sizes=(8, 16, 32, 64, 128, 256, 512, 1024)):
     resize_fn = partial(resize_worker, sizes=sizes)
 
