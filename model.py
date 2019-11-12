@@ -1,4 +1,13 @@
-# Modelo basado en A Style-Based Generator Architecture for Generative Adversarial Networks
+''' 
+Modelo basado en A Style-Based Generator Architecture for Generative Adversarial Networks 
+https://github.com/rosinality/style-based-gan-pytorch
+
+El modelo utiliza:
+Inicializador de pesos xavier inicialization
+Bloques convolucionales
+Progressive GAN
+AdaIN
+'''
 import torch
 
 from torch import nn
