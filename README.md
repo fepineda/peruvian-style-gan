@@ -5,31 +5,31 @@ Cada integrante se encargó de clasificar 10.000 imágenes de celebridades. A co
 
 - Si se especula que tienen más de 55 años.
 - Si las caras se encuentran mirando hacia la cámara (como la foto de DNI). Se consideró muy pocas fotos de perfil, donde se veía que la personas a pesar de estar en esa posición, miraba a la cámara.
-Si tienen rasgos de ancianos a pesar de su verdadera edad. Por ejemplo, existen celebridades (en su gran mayoría mujeres) que usan mucho maquillaje o cirugías para verse joven, estos casos no se tomaron en cuenta a pesar de que se sabía que eran personas mayores.
-A pesar de que exista deformidades en la foto. Por ejemplo, había casos donde la cabeza se estiraba hasta el extremo superior de la imagen.
-A pesar de que haya letras (pequeñas) sobre el rostro de la cara de la persona.
-A pesar de que use accesorios que tapaba gran parte de su rostro. Por ejemplo, un sombrero, en ocasiones su propio cabello.
-A pesar de que haya 2 rostros en la foto.
-Todas las caras que cumplan con las reglas antes descritas, sin filtrar algún rasgo o accesorio en particular.
+- Si tienen rasgos de ancianos a pesar de su verdadera edad. Por ejemplo, existen celebridades (en su gran mayoría mujeres) que usan mucho maquillaje o cirugías para verse joven, estos casos no se tomaron en cuenta a pesar de que se sabía que eran personas mayores.
+- A pesar de que exista deformidades en la foto. Por ejemplo, había casos donde la cabeza se estiraba hasta el extremo superior de la imagen.
+- A pesar de que haya letras (pequeñas) sobre el rostro de la cara de la persona.
+- A pesar de que use accesorios que tapaba gran parte de su rostro. Por ejemplo, un sombrero, en ocasiones su propio cabello.
+- A pesar de que haya 2 rostros en la foto.
+- Todas las caras que cumplan con las reglas antes descritas, sin filtrar algún rasgo o accesorio en particular.
 
 El conjunto de datos Peruvian_Face, al tener una edad similar (entre 18 a 24 años) y fondo blanco sin accesorios y es homogéneo, al generar las imágenes (con el modelo entrenado) y comparar las características que aportan es poco notorio los cambios. Para mostrar las diferencias se creo un nuevo dataset con un aporte de 50% de rostros de peruanos y 50% de rostros de personas mayores de edad obtenidas de CelebA.
 
 
 #### Conjunto de Datos Peruvian_face
-5000 imagenes de peruanos jóvenes
-Fondo blanco
-Sin accesorios
+- 5000 imagenes de peruanos jóvenes
+- Fondo blanco
+- Sin accesorios
 
 #### Conjunto de datos old_celebA
-2500 imagenes de personas mayores
-Rasgos caucasicos
-Fondo variado
-Con accesorios
+- 2500 imagenes de personas mayores
+- Rasgos caucasicos
+- Fondo variado
+- Con accesorios
 
 #### Conjunto de datos peruvian_mix
-5000 imagenes de personas jóvenes y mayores
-50% peruvian face 
-50% old_celeba
+- 5000 imagenes de personas jóvenes y mayores
+- 50% peruvian face 
+- 50% old_celeba
 
 Al tener un conjunto de datos homogéneo  como peruvian face al momento de generar las imágenes y observar los aportes de dos imágenes en la obtención de una tercera imagen en el espacio latente, se podía apreciar los cambios. Para una mejor visualización se entrenó el conjunto de datos peruvian_mix , en el cual se tienen jóvenes peruanos y ancianos caucasicos.
 
