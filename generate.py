@@ -6,6 +6,7 @@ from torchvision import utils
 
 from model import StyledGenerator
 
+# Se define funciones
 
 @torch.no_grad()
 def get_mean_style(generator, device):
@@ -34,7 +35,7 @@ def sample(generator, step, mean_style, n_sample, device):
     )
     
     return image
-
+# Se utiliza el generador de StyledGenerator para obtener las imagenes 
 @torch.no_grad()
 def style_mixing(generator, step, mean_style, n_source, n_target, device):
     source_code = torch.randn(n_source, 512).to(device)
@@ -82,6 +83,10 @@ if __name__ == '__main__':
     
     device = 'cuda'
 
+       # El modelo carga el archivo generado en el entrenamiento
+       # Permite la generación de imagenes en forma de matriz, mostrando los aportes de dos imagenes para generar una
+       # tercera imagen
+    
     generator = StyledGenerator(512).to(device)
     generator.load_state_dict(torch.load(args.path)['g_running'])
     generator.eval()
