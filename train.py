@@ -1,3 +1,10 @@
+'''
+Programa principal el cual sirve para entrenar el generados y discriminador
+El modelo se encuentra adecuado para correr en múltiples GPUs, se modificó 
+para que el entrenamiento se realice en un solo GPU.
+Se utilizó un batch_size de 16 y un learning rate de 0.001 y 0.003
+
+'''
 import argparse
 import random
 import math
