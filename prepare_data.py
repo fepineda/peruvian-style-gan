@@ -1,3 +1,8 @@
+'''
+Pre procesamiento de las imagenes
+    En el codigo prepare_data.py permite el redimensionamiento utilizando Lanczos a diferentes escalas,
+    Se encaga de uniformizar en tamaño, dimensión, obteniéndose un archivo de 2Gb, el cual se utilizará al entrenar la red.
+'''
 import argparse
 from io import BytesIO
 import multiprocessing
